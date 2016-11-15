@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.won.noticeboard.mapper.GuestMapper">
+	
+	<insert id="insertGuest">
+		insert into guest(name, content)
+		values( #{name}, #{content} )
+	</insert>
+	
+	<select id="listGuest" resultType ="com.won.noticeboard.domain.GuestDTO">
+		select num, name, content, regDate
+		from guest
+		order by num desc
+	</select>
+
+</mapper>
